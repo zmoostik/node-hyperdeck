@@ -1,0 +1,11 @@
+{
+  "name": "hyperdeck",
+  "version": "1.0.0",
+  "description": "client pour le BlackMagic HyperDeck",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vion Nicolas",
+  "license": "GPL v3"
+}
