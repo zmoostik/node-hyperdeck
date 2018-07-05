@@ -2,7 +2,7 @@ Hyperdeck npm package
 -------
 This is a Node.js client librairy that implements Blackmagic Hyperdeck's protocol
 
-#Simple usage:
+# Simple usage:
 
 ```javascript
 var hyperdeck = require("hyperdeck");
