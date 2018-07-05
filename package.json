@@ -2,7 +2,7 @@
   "name": "hyperdeck",
   "version": "1.0.0",
   "homepage": "http://tice-lab.mines-paristech.fr",
-  "repository": "github:zmoostik/souffleur",
+  "repository": "github:zmoostik/nodejs-hypderdeck-module",
   "description": "client pour le BlackMagic HyperDeck",
   "main": "index.js",
   "author": "Vion Nicolas",
