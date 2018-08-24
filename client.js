@@ -18,10 +18,19 @@ var Client = function(host, port, info) {
 	this.socket = new net.Socket();
 	this.parser = new Parser();
 	this.pending = [];
+	this.connecting = false;
 	this.init();
 };
 
-Client.prototype.connect = function(cb) {
+Client.prototype.onConnect = function() {
+	this.connecting = false;
+};
+
+Client.prototype.connect = function() {
+	if (this.connecting)
+		return;
+		
+	this.connecting = true;
 	this.socket.connect(this.port, this.host);
 };
 
@@ -29,6 +38,14 @@ Client.prototype.init = function() {
 	var self = this;
 	this.socket.on('data', function(data) {
 		self.onData(data);
+	});
+
+	this.socket.on('connect', function() {
+		self.onConnect();
+	});
+
+	this.socket.on('error', function(err) {
+		console.log("socket error:", err, self.host + ":" + self.port);
 	});
 
 	this.parser.onResponse = function(code, text, params) {
